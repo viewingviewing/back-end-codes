@@ -4,6 +4,7 @@ import com.example.vngvng.domain.artist.Artist;
 import com.example.vngvng.domain.member.Member;
 import com.example.vngvng.domain.photoreview.PhotoReview;
 import com.example.vngvng.domain.show.Show;
+import com.example.vngvng.domain.venue.Venue;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
@@ -40,6 +41,10 @@ public class Review {
     @ManyToOne
     @JoinColumn(name = "artist_id")
     private Artist artist;
+
+    @ManyToOne
+    @JoinColumn(name = "venue_id")
+    private Venue venue;
 
     @Embedded
     private Evaluation evaluation;
