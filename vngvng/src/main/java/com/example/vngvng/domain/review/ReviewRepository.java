@@ -1,4 +1,4 @@
-package com.example.vngvng.domain.artist;
+package com.example.vngvng.domain.review;
 
-public interface ArtistRepository {
+public interface ReviewRepository {
 }

@@ -1,4 +1,4 @@
-package com.example.vngvng.domain.artist;
+package com.example.vngvng.domain.venue;
 
-public interface ArtistRepository {
+public interface VenueRepository {
 }
