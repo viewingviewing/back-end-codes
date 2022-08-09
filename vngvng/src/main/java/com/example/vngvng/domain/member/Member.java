@@ -8,6 +8,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -31,7 +32,7 @@ public class Member {
     private String email;
 
     @Column(name = "birthday", columnDefinition = "LocalDate")
-    private Integer birthday;
+    private LocalDate birthday;
 
     @Column(name = "gender", columnDefinition = "char")
     private String gender;
