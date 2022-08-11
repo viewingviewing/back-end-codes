@@ -1,4 +1,4 @@
-package com.example.vngvng.DTO.review;
+package com.example.vngvng.domain.review.DTO;
 
 import com.example.vngvng.domain.artist.Artist;
 import com.example.vngvng.domain.member.Member;
@@ -15,7 +15,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 @Getter
-public class PostReviewDto {
+public class ReviewCreateRequestDto {
     private Member member;
     private Long reviewId;
     private LocalDateTime writeTime;
@@ -28,7 +28,7 @@ public class PostReviewDto {
     private List<PhotoReview> photoReviews;
 
     @Builder
-    public PostReviewDto(Member member, Long reviewId, LocalDateTime writeTime, Seat seat, Artist artist, Show show, Venue venue, Evaluation evaluation, String textReview, List<PhotoReview> photoReviews){
+    public ReviewCreateRequestDto(Member member, Long reviewId, LocalDateTime writeTime, Seat seat, Artist artist, Show show, Venue venue, Evaluation evaluation, String textReview, List<PhotoReview> photoReviews){
         this.member = member;
         this.reviewId = reviewId;
         this.writeTime = writeTime;
@@ -44,7 +44,6 @@ public class PostReviewDto {
     public Review toEntity() {
         return Review.builder()
                 .member(member)
-                .reveiwId(reviewId)
                 .writeTime(writeTime)
                 .seat(seat)
                 .artist(artist)

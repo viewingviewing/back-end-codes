@@ -8,6 +8,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 @Table(name = "Scrap")
@@ -28,11 +29,12 @@ public class Scrap {
     @JoinColumn(name = "review_id")
     private Review review;
 
-    private Date scrapDate; //스크랩 날짜.
+    private LocalDateTime scrapTime; //스크랩 날짜.
 
     @Builder
-    public Scrap(Member member, Review review){
+    public Scrap(Member member, Review review, LocalDateTime scrapTime){
         this.member = member;
         this.review = review;
+        this.scrapTime = scrapTime;
     }
 }

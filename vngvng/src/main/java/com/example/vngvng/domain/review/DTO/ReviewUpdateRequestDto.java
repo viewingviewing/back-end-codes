@@ -1,4 +1,4 @@
-package com.example.vngvng.DTO.review;
+package com.example.vngvng.domain.review.DTO;
 
 import com.example.vngvng.domain.artist.Artist;
 import com.example.vngvng.domain.photoreview.PhotoReview;
@@ -14,7 +14,7 @@ import java.util.List;
 
 @Getter
 @NoArgsConstructor
-public class UpdateReviewRequestDto {
+public class ReviewUpdateRequestDto {
     private Show show;
     private Venue venue;
     private Artist artist;
@@ -24,7 +24,17 @@ public class UpdateReviewRequestDto {
     private Seat seat;
 
     @Builder
-    public UpdateReviewRequestDto(Show show, Venue venue, Artist artist, String textReview, List<PhotoReview> photoReviews, Evaluation evaluation, Seat seat) {
+    public ReviewUpdateRequestDto(Show show, Venue venue, Artist artist, String textReview, List<PhotoReview> photoReviews, Evaluation evaluation, Seat seat) {
+        this.seat = seat;
+        this.artist = artist;
+        this.show = show;
+        this.venue = venue;
+        this.evaluation = evaluation;
+        this.textReview = textReview;
+        this.photoReviews = photoReviews;
+    }
+
+    public void reviewUpdate(Show show, Venue venue, Artist artist, String textReview, List<PhotoReview> photoReviews, Evaluation evaluation, Seat seat){
         this.seat = seat;
         this.artist = artist;
         this.show = show;

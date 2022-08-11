@@ -60,9 +60,25 @@ public class Review {
     private List<PhotoReview> photoReviews = new ArrayList<>();
 
     @Builder
-    public Review(Seat floor, Seat seat, Evaluation evaluation){
+    public Review(Member member,  LocalDateTime writeTime, Seat seat, Artist artist, Show show, Venue venue, Evaluation evaluation, String textReview, List<PhotoReview> photoReviews){
+        this.member = member;
+        this.writeTime = writeTime;
         this.seat = seat;
+        this.artist = artist;
+        this.show = show;
+        this.venue = venue;
         this.evaluation = evaluation;
+        this.textReview = textReview;
+        this.photoReviews = photoReviews;
     }
 
+    public void reviewUpdate(Show show, Venue venue, Artist artist, String textReview, List<PhotoReview> photoReviews, Evaluation evaluation, Seat seat){
+        this.seat = seat;
+        this.artist = artist;
+        this.show = show;
+        this.venue = venue;
+        this.evaluation = evaluation;
+        this.textReview = textReview;
+        this.photoReviews = photoReviews;
+    }
 }
