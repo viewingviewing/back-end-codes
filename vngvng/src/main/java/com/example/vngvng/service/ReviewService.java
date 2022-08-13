@@ -76,6 +76,7 @@ public class ReviewService {
 
         return dtos;
     }
+    //scrap 목록 가져오기
 
     //scrap 및 취소 기능
     public void reviewScrap(Long reviewId, Long memberId) {

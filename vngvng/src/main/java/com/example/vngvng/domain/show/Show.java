@@ -30,7 +30,6 @@ public class Show {
     private String poster;
 
     @OneToMany(mappedBy = "show")
-    //@JoinColumn(name = "artist_id")
     private List<Casts> casts = new ArrayList<>();
 
     @ManyToOne(fetch = FetchType.LAZY)

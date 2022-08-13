@@ -18,26 +18,32 @@ public class ReviewController {
 
     private final ReviewService reviewService;
 
-    @GetMapping("review")
-    public List<ReviewResponseDto> findAll(){
+    @GetMapping("review") //review R -list
+    public List<ReviewResponseDto> findAll() {
         return reviewService.findAll();
     }
-    @PostMapping("review")
+
+    @PostMapping("review") //review C
     public Long postReview(@RequestBody ReviewCreateRequestDto requestDto) {
         return reviewService.postReview(requestDto);
     }
 
-    @GetMapping("review/{id}")
-    public ReviewResponseDto findById(@PathVariable Long id){
+    @GetMapping("review/{id}") //review R -객체
+    public ReviewResponseDto findById(@PathVariable(name = "id") Long id) {
         return reviewService.findById(id);
     }
 
-    @PatchMapping("review/{id}")
-    public Long updateReview(@PathVariable Long id, @RequestBody ReviewUpdateRequestDto requestDto) {
+    @PatchMapping("review/{id}") //review U
+    public Long updateReview(@PathVariable(name = "id") Long id, @RequestBody ReviewUpdateRequestDto requestDto) {
         return reviewService.updateReview(id, requestDto);
     }
+
+    @DeleteMapping("review/{id}")
+    public Long deleteReview(@PathVariable(name = "id") Long id) {
+        return reviewService.deleteReview(id);
+    }
     @PostMapping("review/{id}/scrap") //api 명세 수정하기 //스크랩 추가
-    public SuccessResponse<String> reviewScrap(@PathVariable Long reviewId, Long memberId){
+    public SuccessResponse<String> reviewScrap(@PathVariable(name = "id") Long reviewId, @RequestBody Long memberId){
         reviewService.reviewScrap(reviewId, memberId);
         return SuccessResponse.success(null);
     }
