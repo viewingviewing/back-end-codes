@@ -23,8 +23,10 @@ public class ReviewUpdateRequestDto {
     private Evaluation evaluation;
     private Seat seat;
 
+    private Long scrapCount;
+
     @Builder
-    public ReviewUpdateRequestDto(Show show, Venue venue, Artist artist, String textReview, List<PhotoReview> photoReviews, Evaluation evaluation, Seat seat) {
+    public ReviewUpdateRequestDto(Show show, Venue venue, Artist artist, String textReview, List<PhotoReview> photoReviews, Evaluation evaluation, Seat seat, Long scrapCount) {
         this.seat = seat;
         this.artist = artist;
         this.show = show;
@@ -32,6 +34,7 @@ public class ReviewUpdateRequestDto {
         this.evaluation = evaluation;
         this.textReview = textReview;
         this.photoReviews = photoReviews;
+        this.scrapCount = scrapCount;
     }
 
     public void reviewUpdate(Show show, Venue venue, Artist artist, String textReview, List<PhotoReview> photoReviews, Evaluation evaluation, Seat seat){

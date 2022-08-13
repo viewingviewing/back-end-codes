@@ -3,6 +3,7 @@ package com.example.vngvng.domain.review;
 import com.example.vngvng.domain.artist.Artist;
 import com.example.vngvng.domain.member.Member;
 import com.example.vngvng.domain.photoreview.PhotoReview;
+import com.example.vngvng.domain.scrap.Scrap;
 import com.example.vngvng.domain.show.Show;
 import com.example.vngvng.domain.venue.Venue;
 import lombok.AccessLevel;
@@ -59,6 +60,10 @@ public class Review {
     )
     private List<PhotoReview> photoReviews = new ArrayList<>();
 
+    @OneToMany(mappedBy = "review")
+    private List<Scrap> scraps = new ArrayList<>();
+    private Long scrapCount;
+
     @Builder
     public Review(Member member,  LocalDateTime writeTime, Seat seat, Artist artist, Show show, Venue venue, Evaluation evaluation, String textReview, List<PhotoReview> photoReviews){
         this.member = member;
@@ -80,5 +85,17 @@ public class Review {
         this.evaluation = evaluation;
         this.textReview = textReview;
         this.photoReviews = photoReviews;
+    }
+
+    public void mappingScrap(Scrap scrap){
+        this.scraps.add(scrap);
+    }
+
+    public void updateScrapCount(){
+        this.scrapCount = (long) this.scraps.size();
+    }
+
+    public void discountScrap(Scrap scrap){
+        this.scraps.remove(scrap);
     }
 }

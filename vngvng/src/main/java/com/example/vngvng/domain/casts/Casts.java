@@ -1,10 +1,10 @@
-package com.example.vngvng.domain.cast;
+package com.example.vngvng.domain.casts;
 
 import com.example.vngvng.domain.artist.Artist;
 import com.example.vngvng.domain.show.Show;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
 
 import javax.persistence.*;
 
@@ -12,8 +12,10 @@ import javax.persistence.*;
 @Table(name = "cast")
 @Getter
 @NoArgsConstructor
-public class Cast { //artist-show 간 bridge entity
-    @Id
+//@IdClass(CastsId.class)
+public class Casts { //artist-show 간 bridge entity
+    @Id @GeneratedValue
+    @Column(name = "cast_id")
     private Long id;
 
     @ManyToOne
@@ -23,4 +25,11 @@ public class Cast { //artist-show 간 bridge entity
     @ManyToOne
     @JoinColumn(name = "show_id")
     private Show show;
+
+    @Builder
+    public Casts(Long id, Artist artist, Show show){
+        this.id = id;
+        this.artist = artist;
+        this.show = show;
+    }
 }

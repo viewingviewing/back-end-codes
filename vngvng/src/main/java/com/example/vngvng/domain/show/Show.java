@@ -1,6 +1,7 @@
 package com.example.vngvng.domain.show;
 
 import com.example.vngvng.domain.artist.Artist;
+import com.example.vngvng.domain.casts.Casts;
 import com.example.vngvng.domain.review.Review;
 import com.example.vngvng.domain.venue.Venue;
 import lombok.AccessLevel;
@@ -28,9 +29,9 @@ public class Show {
     @Column(name = "show_poster")
     private String poster;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "artist_id")
-    private Artist artist;
+    @OneToMany(mappedBy = "show")
+    //@JoinColumn(name = "artist_id")
+    private List<Casts> casts = new ArrayList<>();
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "venue_id")
@@ -46,7 +47,7 @@ public class Show {
     public Show(String name, Venue venue, Artist artist, TimeInfo timeInfo){
         this.name = name;
         this.venue = venue;
-        this.artist = artist;
+        //this.artist = artist;
         this.timeInfo = timeInfo;
     }
 }
