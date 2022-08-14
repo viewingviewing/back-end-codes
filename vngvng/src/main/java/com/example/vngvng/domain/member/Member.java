@@ -43,7 +43,9 @@ public class Member {
     @Column(name = "standing_height")
     private int standingHeight;
 
+
     @Column(name = "sitting_height", columnDefinition = "String")
+    @Enumerated(value = EnumType.STRING)
     private SittingHeight sittingHeight;
 
     @OneToMany(mappedBy = "member")
@@ -51,10 +53,18 @@ public class Member {
     @OneToMany(mappedBy = "member")
     private List<Scrap> scraps = new ArrayList<>();
 
+    public void update(boolean wearGlasses, int standingHeight, SittingHeight sittingHeight){
+        this.wearGlasses = wearGlasses;
+        this.standingHeight = standingHeight;
+        this.sittingHeight = sittingHeight;
+    }
+
     @Builder
-    public Member(String name, String nickName, String email){
+    public Member(String id, String name, String nickName, String email){
+        this.id = id;
         this.name = name;
         this.nickName = nickName;
         this.email = email;
     }
+
 }
