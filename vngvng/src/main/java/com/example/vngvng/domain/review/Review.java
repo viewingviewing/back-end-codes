@@ -32,7 +32,7 @@ public class Review {
     private Member member;
 
     @Embedded
-    private Seat seat;
+    private Seat seatInfo;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "show_id")
@@ -60,8 +60,8 @@ public class Review {
     private List<PhotoReview> photoReviews = new ArrayList<>();
 
     @Builder
-    public Review(Seat floor, Seat seat, Evaluation evaluation){
-        this.seat = seat;
+    public Review(Seat seatInfo, Evaluation evaluation){
+        this.seatInfo = seatInfo;
         this.evaluation = evaluation;
     }
 

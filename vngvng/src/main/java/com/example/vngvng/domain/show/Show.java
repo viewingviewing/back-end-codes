@@ -29,11 +29,11 @@ public class Show {
     private String poster;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id")
+    @JoinColumn(name = "artist_id")
     private Artist artist;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id")
+    @JoinColumn(name = "venue_id")
     private Venue venue;
 
     @Embedded

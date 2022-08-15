@@ -42,23 +42,17 @@ public class Member {
     @Column(name = "glasses", columnDefinition = "boolean")
     private boolean wearGlasses;
 
-    @Column(name = "standing_height")
     @Embedded
-    private Height standingHeight;
-
-    @Column(name = "sitting_height")
-    @Embedded
-    private Height sittingHeight;
+    private Height height;
 
     @OneToMany(mappedBy = "member", cascade = ALL, orphanRemoval = true)
     private List<Review> reviews = new ArrayList<>();
     @OneToMany(mappedBy = "member", cascade = ALL, orphanRemoval = true)
     private List<Scrap> scraps = new ArrayList<>();
 
-    public void update(boolean wearGlasses, Height standingHeight, Height sittingHeight){
+    public void update(boolean wearGlasses, Height height){
         this.wearGlasses = wearGlasses;
-        this.standingHeight = standingHeight;
-        this.sittingHeight = sittingHeight;
+        this.height = height;
     }
 
     @Builder
