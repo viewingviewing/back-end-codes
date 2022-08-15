@@ -1,9 +1,9 @@
-package com.example.vngvng.controller;
+package com.example.vngvng.domain.review;
 
 import com.example.vngvng.domain.review.DTO.ReviewCreateRequestDto;
 import com.example.vngvng.domain.review.DTO.ReviewResponseDto;
 import com.example.vngvng.domain.review.DTO.ReviewUpdateRequestDto;
-import com.example.vngvng.service.ReviewService;
+import com.example.vngvng.domain.review.ReviewService;
 import com.example.vngvng.tools.SuccessResponse;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
