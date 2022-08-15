@@ -1,4 +1,4 @@
-package com.example.vngvng.service;
+package com.example.vngvng.domain.review;
 
 import com.example.vngvng.domain.member.Member;
 import com.example.vngvng.domain.member.MemberRepository;
