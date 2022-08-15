@@ -13,7 +13,7 @@ import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
-@Table(name = "perform")
+@Table(name = "Show")
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Entity
@@ -23,17 +23,17 @@ public class Show {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "name")
+    @Column(name = "show_name")
     private String name;
 
-    @Column(name = "poster")
+    @Column(name = "show_poster")
     private String poster;
 
     @OneToMany(mappedBy = "show")
     private List<Casts> casts = new ArrayList<>();
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id")
+    @JoinColumn(name = "venue_id")
     private Venue venue;
 
     @Embedded

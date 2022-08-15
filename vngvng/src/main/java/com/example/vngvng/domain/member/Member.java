@@ -12,19 +12,17 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-import static javax.persistence.CascadeType.ALL;
-
-@Table(name = "member")
+@Table(name = "Member")
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Entity
 public class Member {
 
     @Id //@GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable = false, length = 50, columnDefinition = "varchar")
+    @Column(name = "member_id", nullable = false, length = 50, columnDefinition = "varchar")
     private String id;
 
-    @Column(name = "name", nullable = false, length = 50, columnDefinition = "nvarchar")
+    @Column(name = "member_name", nullable = false, length = 50, columnDefinition = "nvarchar")
     private String name;
 
     @Column(name = "nickname", nullable = false, unique = true, length = 50, columnDefinition = "nvarchar")
@@ -43,27 +41,19 @@ public class Member {
     private boolean wearGlasses;
 
     @Column(name = "standing_height")
-    @Embedded
-    private Height standingHeight;
+    private int standingHeight;
 
-    @Column(name = "sitting_height")
-    @Embedded
-    private Height sittingHeight;
+    @Column(name = "sitting_height", columnDefinition = "String")
+    private SittingHeight sittingHeight;
 
-    @OneToMany(mappedBy = "member", cascade = ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "member")
     private List<Review> reviews = new ArrayList<>();
-    
-    @OneToMany(mappedBy = "member", cascade = ALL, orphanRemoval = true)
 
-    public void update(boolean wearGlasses, Height standingHeight, Height sittingHeight){
-        this.wearGlasses = wearGlasses;
-        this.standingHeight = standingHeight;
-        this.sittingHeight = sittingHeight;
-    }
+    @OneToMany(mappedBy = "member")
+    private List<Scrap> scraps = new ArrayList<>();
 
     @Builder
-    public Member(String id, String name, String nickName, String email){
-        this.id = id;
+    public Member(String name, String nickName, String email){
         this.name = name;
         this.nickName = nickName;
         this.email = email;
