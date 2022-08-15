@@ -15,7 +15,7 @@ import javax.persistence.*;
 //@IdClass(CastsId.class)
 public class Casts { //artist-show 간 bridge entity
     @Id @GeneratedValue
-    @Column(name = "cast_id")
+    @Column(name = "id")
     private Long id;
 
     @ManyToOne

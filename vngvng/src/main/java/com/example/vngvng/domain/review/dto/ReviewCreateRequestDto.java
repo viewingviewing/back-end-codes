@@ -1,4 +1,4 @@
-package com.example.vngvng.domain.review.DTO;
+package com.example.vngvng.domain.review.dto;
 
 import com.example.vngvng.domain.artist.Artist;
 import com.example.vngvng.domain.member.Member;
@@ -19,7 +19,7 @@ public class ReviewCreateRequestDto {
     private Member member;
     private Long reviewId;
     private LocalDateTime writeTime;
-    private Seat seat;
+    private Seat seatInfo;
     private Artist artist;
     private Show show;
     private Venue venue;
@@ -28,11 +28,11 @@ public class ReviewCreateRequestDto {
     private List<PhotoReview> photoReviews;
 
     @Builder
-    public ReviewCreateRequestDto(Member member, Long reviewId, LocalDateTime writeTime, Seat seat, Artist artist, Show show, Venue venue, Evaluation evaluation, String textReview, List<PhotoReview> photoReviews){
+    public ReviewCreateRequestDto(Member member, Long reviewId, LocalDateTime writeTime, Seat seatInfo, Artist artist, Show show, Venue venue, Evaluation evaluation, String textReview, List<PhotoReview> photoReviews){
         this.member = member;
         this.reviewId = reviewId;
         this.writeTime = writeTime;
-        this.seat = seat;
+        this.seatInfo = seatInfo;
         this.artist = artist;
         this.show = show;
         this.venue = venue;
@@ -45,7 +45,7 @@ public class ReviewCreateRequestDto {
         return Review.builder()
                 .member(member)
                 .writeTime(writeTime)
-                .seat(seat)
+                .seatInfo(seatInfo)
                 .artist(artist)
                 .show(show)
                 .venue(venue)

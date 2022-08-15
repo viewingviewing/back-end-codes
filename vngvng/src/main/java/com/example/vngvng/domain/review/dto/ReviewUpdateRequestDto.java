@@ -1,4 +1,4 @@
-package com.example.vngvng.domain.review.DTO;
+package com.example.vngvng.domain.review.dto;
 
 import com.example.vngvng.domain.artist.Artist;
 import com.example.vngvng.domain.photoreview.PhotoReview;

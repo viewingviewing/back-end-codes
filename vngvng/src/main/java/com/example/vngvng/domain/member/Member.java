@@ -12,6 +12,8 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+import static javax.persistence.CascadeType.ALL;
+
 @Table(name = "Member")
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
@@ -19,10 +21,10 @@ import java.util.List;
 public class Member {
 
     @Id //@GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "member_id", nullable = false, length = 50, columnDefinition = "varchar")
+    @Column(name = "id", nullable = false, length = 50, columnDefinition = "varchar")
     private String id;
 
-    @Column(name = "member_name", nullable = false, length = 50, columnDefinition = "nvarchar")
+    @Column(name = "name", nullable = false, length = 50, columnDefinition = "nvarchar")
     private String name;
 
     @Column(name = "nickname", nullable = false, unique = true, length = 50, columnDefinition = "nvarchar")
@@ -55,7 +57,8 @@ public class Member {
     }
 
     @Builder
-    public Member(String name, String nickName, String email){
+    public Member(String id, String name, String nickName, String email){
+        this.id = id;
         this.name = name;
         this.nickName = nickName;
         this.email = email;

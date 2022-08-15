@@ -1,9 +1,8 @@
 package com.example.vngvng.domain.review;
 
-import com.example.vngvng.domain.review.DTO.ReviewCreateRequestDto;
-import com.example.vngvng.domain.review.DTO.ReviewResponseDto;
-import com.example.vngvng.domain.review.DTO.ReviewUpdateRequestDto;
-import com.example.vngvng.domain.review.ReviewService;
+import com.example.vngvng.domain.review.dto.ReviewCreateRequestDto;
+import com.example.vngvng.domain.review.dto.ReviewResponseDto;
+import com.example.vngvng.domain.review.dto.ReviewUpdateRequestDto;
 import com.example.vngvng.tools.SuccessResponse;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -43,7 +42,7 @@ public class ReviewController {
         return reviewService.deleteReview(id);
     }
     @PostMapping("review/{id}/scrap") //api 명세 수정하기 //스크랩 추가
-    public SuccessResponse<String> reviewScrap(@PathVariable(name = "id") Long reviewId, @RequestBody Long memberId){
+    public SuccessResponse<String> reviewScrap(@PathVariable(name = "id") Long reviewId, @RequestBody String memberId){
         reviewService.reviewScrap(reviewId, memberId);
         return SuccessResponse.success(null);
     }

@@ -15,7 +15,7 @@ import javax.persistence.*;
 
 public class PhotoReview {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "photo_id")
+    @Column(name = "id")
     private Long id;
 
     @ManyToOne
