@@ -40,17 +40,19 @@ public class Member {
     @Column(name = "glasses", columnDefinition = "boolean")
     private boolean wearGlasses;
 
-    @Column(name = "standing_height")
-    private int standingHeight;
+    @Embedded
+    private Height height;
 
-    @Column(name = "sitting_height", columnDefinition = "String")
-    private SittingHeight sittingHeight;
-
-    @OneToMany(mappedBy = "member")
+    @OneToMany(mappedBy = "member", cascade = ALL, orphanRemoval = true)
     private List<Review> reviews = new ArrayList<>();
 
     @OneToMany(mappedBy = "member")
     private List<Scrap> scraps = new ArrayList<>();
+
+    public void update(boolean wearGlasses, Height height){
+        this.wearGlasses = wearGlasses;
+        this.height = height;
+    }
 
     @Builder
     public Member(String name, String nickName, String email){

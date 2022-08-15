@@ -22,10 +22,10 @@ import java.util.List;
 @Entity
 public class Review {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "review_id")
+    @Column(name = "id")
     private Long id;
 
-    @Column(name = "writeTime", nullable = false)
+    @Column(name = "write_time", nullable = false)
     private LocalDateTime writeTime;
 
     @ManyToOne(fetch = FetchType.LAZY)
@@ -33,7 +33,7 @@ public class Review {
     private Member member;
 
     @Embedded
-    private Seat seat;
+    private Seat seatInfo;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "show_id")
@@ -65,13 +65,8 @@ public class Review {
     private Long scrapCount;
 
     @Builder
-    public Review(Member member,  LocalDateTime writeTime, Seat seat, Artist artist, Show show, Venue venue, Evaluation evaluation, String textReview, List<PhotoReview> photoReviews){
-        this.member = member;
-        this.writeTime = writeTime;
-        this.seat = seat;
-        this.artist = artist;
-        this.show = show;
-        this.venue = venue;
+    public Review(Seat seatInfo, Evaluation evaluation){
+        this.seatInfo = seatInfo;
         this.evaluation = evaluation;
         this.textReview = textReview;
         this.photoReviews = photoReviews;

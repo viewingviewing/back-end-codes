@@ -6,15 +6,12 @@ import javax.persistence.Column;
 import javax.persistence.Embeddable;
 
 @Embeddable
-
-enum SittingHeight{
-    TALL, REGULAR, SHORT
-}
-
 public class Height {
     @Column(name = "standing_height")
-    private int standingHeignt;
+    private int standingHeight;
+
     @Column(name = "sitting_height")
+    @Enumerated(value = EnumType.STRING)
     private SittingHeight sittingHeight;
 
     @Builder

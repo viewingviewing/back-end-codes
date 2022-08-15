@@ -29,8 +29,9 @@ public class Show {
     @Column(name = "show_poster")
     private String poster;
 
-    @OneToMany(mappedBy = "show")
-    private List<Casts> casts = new ArrayList<>();
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "artist_id")
+    private Artist artist;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "venue_id")
