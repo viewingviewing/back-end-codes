@@ -2,12 +2,9 @@ package com.example.vngvng.domain.review;
 
 import com.example.vngvng.domain.member.Member;
 import com.example.vngvng.domain.member.MemberRepository;
-import com.example.vngvng.domain.review.DTO.ReviewCreateRequestDto;
-import com.example.vngvng.domain.review.DTO.ReviewResponseDto;
-import com.example.vngvng.domain.review.DTO.ReviewUpdateRequestDto;
-import com.example.vngvng.domain.review.Review;
-import com.example.vngvng.domain.review.ReviewRepository;
-import com.example.vngvng.domain.scrap.DTO.ScrapDto;
+import com.example.vngvng.domain.review.dto.ReviewCreateRequestDto;
+import com.example.vngvng.domain.review.dto.ReviewResponseDto;
+import com.example.vngvng.domain.review.dto.ReviewUpdateRequestDto;
 import com.example.vngvng.domain.scrap.Scrap;
 import com.example.vngvng.domain.scrap.ScrapRepository;
 import lombok.RequiredArgsConstructor;
@@ -79,7 +76,7 @@ public class ReviewService {
     //scrap 목록 가져오기
 
     //scrap 및 취소 기능
-    public void reviewScrap(Long reviewId, Long memberId) {
+    public void reviewScrap(Long reviewId, String memberId) {
         Review review = reviewRepository.findById(reviewId).get();
         Member member = memberRepository.findById(memberId).get();
         Optional<Scrap> byReviewAndMember = scrapRepository.findByReviewAndMember(review, member);

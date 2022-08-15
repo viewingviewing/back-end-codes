@@ -16,19 +16,19 @@ import java.util.List;
 @Entity
 public class Venue {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "venue_id")
+    @Column(name = "id")
     private Long id;
 
-    @Column(name = "venue_zipcode")
+    @Column(name = "zipcode")
     private String zipcode;
 
-    @Column(name = "venue_name")
+    @Column(name = "name")
     private String name;
 
     @Column(name = "hall_name")
     private String hallName;
 
-    @Column(name = "venue_img")
+    @Column(name = "img")
     private String venueImg;
 
     private Long totalSeat;

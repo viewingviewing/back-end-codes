@@ -1,7 +1,6 @@
 package com.example.vngvng.domain.scrap;
 import com.example.vngvng.domain.member.Member;
 import com.example.vngvng.domain.review.Review;
-import com.example.vngvng.domain.scrap.DTO.ScrapDto;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

@@ -23,10 +23,10 @@ public class Show {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "show_name")
+    @Column(name = "name")
     private String name;
 
-    @Column(name = "show_poster")
+    @Column(name = "poster")
     private String poster;
 
     @ManyToOne(fetch = FetchType.LAZY)

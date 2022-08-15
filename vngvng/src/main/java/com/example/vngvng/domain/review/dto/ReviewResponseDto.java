@@ -1,4 +1,4 @@
-package com.example.vngvng.domain.review.DTO;
+package com.example.vngvng.domain.review.dto;
 
 import com.example.vngvng.domain.artist.Artist;
 import com.example.vngvng.domain.member.Member;
@@ -29,6 +29,6 @@ public class ReviewResponseDto {
         this.textReview = entity.getTextReview();
         this.venue = entity.getVenue();
         this.writer = entity.getMember();
-        this.seat = entity.getSeat();
+        this.seat = entity.getSeatInfo();
     }
 }
