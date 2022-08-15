@@ -10,30 +10,29 @@ import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
-@Table(name = "venue")
+@Table(name = "Venue")
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Entity
 public class Venue {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
+    @Column(name = "venue_id")
     private Long id;
 
-    @Column(name = "zipcode")
+    @Column(name = "venue_zipcode")
     private String zipcode;
 
-    @Column(name = "name")
+    @Column(name = "venue_name")
     private String name;
 
     @Column(name = "hall_name")
     private String hallName;
 
-    @Column(name = "img")
+    @Column(name = "venue_img")
     private String venueImg;
 
-    @Column(name = "type")
-    @Enumerated
-    private VenueType venueType;
+    private Long totalSeat;
+    private Long totalFloor;
 
     @OneToMany(mappedBy = "venue")
     private List<Review> reviews = new ArrayList<>();
@@ -42,10 +41,12 @@ public class Venue {
     private String seatMap;
 
     @Builder
-    public Venue(String zipcode, String name, String hallName, String seatMap){
+    public Venue(String zipcode, String name, String hallName, Long totalFloor, Long totalSeat, String seatMap){
         this.zipcode = zipcode;
         this.name = name;
         this.hallName = hallName;
+        this.totalFloor = totalFloor;
+        this.totalSeat = totalSeat;
         this.seatMap = seatMap;
     }
 }
