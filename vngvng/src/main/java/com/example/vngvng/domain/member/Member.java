@@ -52,8 +52,8 @@ public class Member {
 
     @OneToMany(mappedBy = "member", cascade = ALL, orphanRemoval = true)
     private List<Review> reviews = new ArrayList<>();
+    
     @OneToMany(mappedBy = "member", cascade = ALL, orphanRemoval = true)
-    private List<Scrap> scraps = new ArrayList<>();
 
     public void update(boolean wearGlasses, Height standingHeight, Height sittingHeight){
         this.wearGlasses = wearGlasses;
@@ -67,6 +67,10 @@ public class Member {
         this.name = name;
         this.nickName = nickName;
         this.email = email;
+    }
+
+    public void mappingScrap(Scrap scrap){
+        this.scraps.add(scrap);
     }
 
 }

@@ -1,5 +1,6 @@
 package com.example.vngvng.domain.artist;
 
+import com.example.vngvng.domain.casts.Casts;
 import com.example.vngvng.domain.review.Review;
 import com.example.vngvng.domain.show.Show;
 import lombok.AccessLevel;
@@ -30,7 +31,7 @@ public class Artist {
     private List<Review> reviews = new ArrayList<>();
 
     @OneToMany(mappedBy = "artist")
-    private List<Show> shows = new ArrayList<>();
+    private List<Casts> casts = new ArrayList<>();
 
     @Builder
     public Artist(String name){

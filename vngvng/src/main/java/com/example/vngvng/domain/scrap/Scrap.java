@@ -8,7 +8,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 import java.util.Date;
+import java.util.Optional;
 
 @Table(name = "Scrap")
 @Getter
@@ -18,6 +20,7 @@ import java.util.Date;
 public class Scrap {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "scrap_id")
     private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY)
@@ -28,11 +31,27 @@ public class Scrap {
     @JoinColumn(name = "review_id")
     private Review review;
 
-    private Date scrapDate; //스크랩 날짜.
+    private LocalDateTime scrapTime; //스크랩 날짜
 
     @Builder
-    public Scrap(Member member, Review review){
+    public Scrap(Member member, Review review, LocalDateTime scrapTime){
         this.member = member;
         this.review = review;
+        this.scrapTime = scrapTime;
     }
+
+    public void mappingReview(Review review){
+        this.review = review;
+        member.mappingScrap(this);
+    }
+
+    public void mappingMember(Member member){
+        this.member = member;
+        member.mappingScrap(this);
+    }
+
+    public static boolean isScrapedReview(Optional<Scrap> optionalScrap){
+        return optionalScrap.isPresent();
+    }
+
 }
