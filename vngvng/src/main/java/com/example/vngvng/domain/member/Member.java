@@ -48,6 +48,7 @@ public class Member {
 
     @OneToMany(mappedBy = "member")
     private List<Review> reviews = new ArrayList<>();
+
     @OneToMany(mappedBy = "member")
     private List<Scrap> scraps = new ArrayList<>();
 
@@ -57,4 +58,9 @@ public class Member {
         this.nickName = nickName;
         this.email = email;
     }
+
+    public void mappingScrap(Scrap scrap){
+        this.scraps.add(scrap);
+    }
+
 }
