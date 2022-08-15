@@ -4,22 +4,24 @@ import lombok.Builder;
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 
 @Embeddable
-
-enum SittingHeight{
-    TALL, REGULAR, SHORT
-}
-
 public class Height {
-    @Column(name = "standing_height")
-    private int standingHeignt;
-    @Column(name = "sitting_height")
+
+    private int standingHeight;
+
+    @Enumerated(value = EnumType.STRING)
     private SittingHeight sittingHeight;
 
     @Builder
-    public Height(int standingHeignt, SittingHeight sittingHeight){
-        this.standingHeignt = standingHeignt;
+    public Height(int standingHeight, SittingHeight sittingHeight){
+        this.standingHeight = standingHeight;
         this.sittingHeight = sittingHeight;
+    }
+
+    public Height() {
+
     }
 }
