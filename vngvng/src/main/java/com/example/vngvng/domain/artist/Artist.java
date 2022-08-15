@@ -17,11 +17,14 @@ import java.util.List;
 @Entity
 public class Artist {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "artist_id")
+    @Column(name = "id")
     private Long id;
 
-    @Column(name = "artist_name")
+    @Column(name = "name")
     private String name;
+
+    @Column(name = "img")
+    private String artistImg;
 
     @OneToMany(mappedBy = "artist")
     private List<Review> reviews = new ArrayList<>();
