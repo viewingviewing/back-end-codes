@@ -1,5 +1,6 @@
 package com.example.vngvng.domain.member.dto;
 
+import com.example.vngvng.domain.member.Height;
 import com.example.vngvng.domain.member.SittingHeight;
 import lombok.Builder;
 import lombok.Getter;
@@ -12,13 +13,11 @@ import java.time.LocalDate;
 @NoArgsConstructor
 public class MemberUpdateRequestDto {
     private boolean wearGlasses;
-    private int standingHeight;
-    private SittingHeight sittingHeight;
+    private Height height;
 
     @Builder
-    public MemberUpdateRequestDto(boolean wearGlasses, int standingHeight, SittingHeight sittingHeight){
+    public MemberUpdateRequestDto(boolean wearGlasses, Height height){
         this.wearGlasses = wearGlasses;
-        this.standingHeight = standingHeight;
-        this.sittingHeight = sittingHeight;
+        this.height = height;
     }
 }

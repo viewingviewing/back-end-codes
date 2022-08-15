@@ -29,7 +29,7 @@ public class MemberService {
     public String update(String id, MemberUpdateRequestDto requestDto){
         Member member = memberRepository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("해당 멤버가 없습니다."));
-        member.update(requestDto.isWearGlasses(), requestDto.getStandingHeight(), requestDto.getSittingHeight());
+        member.update(requestDto.isWearGlasses(), requestDto.getHeight());
         return id;
     }
 }

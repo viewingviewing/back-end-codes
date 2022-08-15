@@ -21,10 +21,10 @@ import java.util.List;
 @Entity
 public class Review {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "review_id")
+    @Column(name = "id")
     private Long id;
 
-    @Column(name = "writeTime", nullable = false)
+    @Column(name = "write_time", nullable = false)
     private LocalDateTime writeTime;
 
     @ManyToOne(fetch = FetchType.LAZY)
