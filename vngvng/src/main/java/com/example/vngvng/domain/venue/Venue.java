@@ -37,7 +37,7 @@ public class Venue {
     @OneToMany(mappedBy = "venue")
     private List<Review> reviews = new ArrayList<>();
 
-    @Column(name = "seat_map", nullable = false, columnDefinition = "varchar")
+    @Column(name = "seat_map")
     private String seatMap;
 
     @Builder

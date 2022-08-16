@@ -13,7 +13,7 @@ import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
-@Table(name = "show")
+@Table(name = "perform")
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Entity
