@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "cast")
+@Table(name = "casts")
 @Getter
 @NoArgsConstructor
 //@IdClass(CastsId.class)

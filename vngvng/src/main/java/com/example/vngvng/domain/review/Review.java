@@ -16,7 +16,7 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-@Table(name = "Review")
+@Table(name = "review")
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Entity

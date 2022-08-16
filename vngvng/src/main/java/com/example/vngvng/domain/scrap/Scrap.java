@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.Optional;
 
-@Table(name = "Scrap")
+@Table(name = "scrap")
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Entity
