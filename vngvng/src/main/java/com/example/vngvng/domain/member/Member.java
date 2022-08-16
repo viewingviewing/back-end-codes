@@ -14,32 +14,32 @@ import java.util.List;
 
 import static javax.persistence.CascadeType.ALL;
 
-@Table(name = "member")
+@Table(name = "members")
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Entity
 public class Member {
 
     @Id //@GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable = false, length = 50, columnDefinition = "varchar")
+    @Column(name = "id")
     private String id;
 
-    @Column(name = "name", nullable = false, length = 50, columnDefinition = "nvarchar")
+    @Column(name = "name")
     private String name;
 
-    @Column(name = "nickname", nullable = false, unique = true, length = 50, columnDefinition = "nvarchar")
+    @Column(name = "nickname")
     private String nickName;
 
-    @Column(name = "email", unique = true, length = 50, columnDefinition = "varchar")
+    @Column(name = "email")
     private String email;
 
-    @Column(name = "birthday", columnDefinition = "LocalDate")
+    @Column(name = "birthday")
     private LocalDate birthday;
 
-    @Column(name = "gender", columnDefinition = "char")
+    @Column(name = "gender")
     private String gender;
 
-    @Column(name = "glasses", columnDefinition = "boolean")
+    @Column(name = "glasses")
     private boolean wearGlasses;
 
     @Embedded

@@ -25,7 +25,7 @@ public class Review {
     @Column(name = "id")
     private Long id;
 
-    @Column(name = "write_time", nullable = false)
+    @Column(name = "write_time")
     private LocalDateTime writeTime;
 
     @ManyToOne(fetch = FetchType.LAZY)
@@ -50,7 +50,7 @@ public class Review {
     @Embedded
     private Evaluation evaluation;
 
-    @Column(name = "text_review", nullable = false, columnDefinition = "varchar")
+    @Column(name = "text_review")
     private String textReview;  //서술형 후기
 
     @OneToMany(
