@@ -31,8 +31,8 @@ public class Venue {
     @Column(name = "img")
     private String venueImg;
 
-    private Long totalSeat;
-    private Long totalFloor;
+    @Column(name = "type")
+    private VenueType type;
 
     @OneToMany(mappedBy = "venue")
     private List<Review> reviews = new ArrayList<>();
@@ -41,12 +41,11 @@ public class Venue {
     private String seatMap;
 
     @Builder
-    public Venue(String zipcode, String name, String hallName, Long totalFloor, Long totalSeat, String seatMap){
+    public Venue(String zipcode, String name, String hallName, VenueType type, String seatMap){
         this.zipcode = zipcode;
         this.name = name;
         this.hallName = hallName;
-        this.totalFloor = totalFloor;
-        this.totalSeat = totalSeat;
+        this.type = type;
         this.seatMap = seatMap;
     }
 }
