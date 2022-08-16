@@ -14,7 +14,7 @@ import java.util.List;
 
 import static javax.persistence.CascadeType.ALL;
 
-@Table(name = "Member")
+@Table(name = "member")
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Entity

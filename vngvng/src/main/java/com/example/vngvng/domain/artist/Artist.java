@@ -12,7 +12,7 @@ import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
-@Table(name = "Artist")
+@Table(name = "artist")
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Entity
