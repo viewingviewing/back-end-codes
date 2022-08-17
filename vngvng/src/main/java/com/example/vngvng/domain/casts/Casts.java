@@ -12,9 +12,8 @@ import javax.persistence.*;
 @Table(name = "casts")
 @Getter
 @NoArgsConstructor
-//@IdClass(CastsId.class)
 public class Casts { //artist-show 간 bridge entity
-    @Id @GeneratedValue
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
 
