@@ -39,9 +39,9 @@ public class Review {
     @JoinColumn(name = "show_id")
     private Show show;
 
-    @ManyToOne
-    @JoinColumn(name = "artist_id")
-    private Artist artist;
+//    @ManyToOne
+//    @JoinColumn(name = "artist_id")
+//    private Artist artist;
 
     @ManyToOne
     @JoinColumn(name = "venue_id")
@@ -65,21 +65,21 @@ public class Review {
     private Long scrapCount;
 
     @Builder
-    public Review(Member member, Seat seatInfo, Evaluation evaluation, LocalDateTime writeTime, Artist artist, Show show, Venue venue, String textReview, List<PhotoReview> photoReviews){
+    public Review(Member member, Seat seatInfo, Evaluation evaluation, LocalDateTime writeTime, Show show, Venue venue, String textReview, List<PhotoReview> photoReviews){
         this.member = member;
         this.seatInfo = seatInfo;
         this.evaluation = evaluation;
         this.writeTime = writeTime;
-        this.artist = artist;
+        //this.artist = artist;
         this.show = show;
         this.venue = venue;
         this.textReview = textReview;
         this.photoReviews = photoReviews;
     }
 
-    public void reviewUpdate(Show show, Venue venue, Artist artist, String textReview, List<PhotoReview> photoReviews, Evaluation evaluation, Seat seatInfo){
+    public void reviewUpdate(Show show, Venue venue, String textReview, List<PhotoReview> photoReviews, Evaluation evaluation, Seat seatInfo){
         this.seatInfo = seatInfo;
-        this.artist = artist;
+        //this.artist = artist;
         this.show = show;
         this.venue = venue;
         this.evaluation = evaluation;
