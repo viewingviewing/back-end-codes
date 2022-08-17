@@ -40,12 +40,16 @@ public class Venue {
     @Column(name = "seat_map")
     private String seatMap;
 
+    @Column(name = "")
+    private String website;
+
     @Builder
-    public Venue(String zipcode, String name, String hallName, VenueType type, String seatMap){
+    public Venue(String zipcode, String name, String hallName, VenueType type, String seatMap, String website){
         this.zipcode = zipcode;
         this.name = name;
         this.hallName = hallName;
         this.type = type;
         this.seatMap = seatMap;
+        this.website = website;
     }
 }
