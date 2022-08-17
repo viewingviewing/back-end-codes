@@ -65,7 +65,7 @@ public class Review {
     private Long scrapCount;
 
     @Builder
-    public Review(Member member, Seat seatInfo, Evaluation evaluation, LocalDateTime writeTime, Show show, Venue venue, String textReview, List<PhotoReview> photoReviews){
+    public Review(Member member, Seat seatInfo, Evaluation evaluation, LocalDateTime writeTime, Show show, Venue venue, String textReview){
         this.member = member;
         this.seatInfo = seatInfo;
         this.evaluation = evaluation;
@@ -74,7 +74,7 @@ public class Review {
         this.show = show;
         this.venue = venue;
         this.textReview = textReview;
-        this.photoReviews = photoReviews;
+//        this.photoReviews = photoReviews;
     }
 
     public void reviewUpdate(Show show, Venue venue, String textReview, List<PhotoReview> photoReviews, Evaluation evaluation, Seat seatInfo){
