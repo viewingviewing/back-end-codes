@@ -25,7 +25,7 @@ public class ReviewCreateRequestDto {
     private Venue venue;
     private Evaluation evaluation;
     private  String textReview;
-    private List<PhotoReview> photoReviews;
+//    private List<PhotoReview> photoReviews;
 
     @Builder
     public ReviewCreateRequestDto(Member member, Long reviewId, LocalDateTime writeTime, Seat seatInfo, Show show, Venue venue, Evaluation evaluation, String textReview, List<PhotoReview> photoReviews){
@@ -38,7 +38,7 @@ public class ReviewCreateRequestDto {
         this.venue = venue;
         this.evaluation = evaluation;
         this.textReview = textReview;
-        this.photoReviews = photoReviews;
+//        this.photoReviews = photoReviews;
     }
 
     public Review toEntity() {
@@ -51,7 +51,7 @@ public class ReviewCreateRequestDto {
                 .venue(venue)
                 .evaluation(evaluation)
                 .textReview(textReview)
-                .photoReviews(photoReviews)
+//                .photoReviews(photoReviews)
                 .build();
     }
 }

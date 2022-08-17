@@ -24,8 +24,8 @@ public class Artist {
     @Column(name = "name")
     private String name;
 
-    @OneToMany(mappedBy = "artist")
-    private List<Review> reviews = new ArrayList<>();
+//    @OneToMany(mappedBy = "artist")
+//    private List<Review> reviews = new ArrayList<>();
 
     @OneToMany(mappedBy = "artist")
     private List<Casts> casts = new ArrayList<>();
