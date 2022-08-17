@@ -14,7 +14,7 @@ import lombok.Getter;
 public class ReviewResponseDto {
     private Member writer;
     private Show show;
-    private Artist artist;
+    //private Artist artist;
     private Venue venue;
     private Seat seat;
 
@@ -23,7 +23,7 @@ public class ReviewResponseDto {
 
     @Builder
     public ReviewResponseDto(Review entity){
-        this.artist = entity.getArtist();
+        //this.artist = entity.getArtist();
         this.evaluation = entity.getEvaluation();
         this.show = entity.getShow();
         this.textReview = entity.getTextReview();

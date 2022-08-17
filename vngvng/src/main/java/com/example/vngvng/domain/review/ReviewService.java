@@ -43,7 +43,7 @@ public class ReviewService {
 
         entity.reviewUpdate(requestDto.getShow(),
                 requestDto.getVenue(),
-                requestDto.getArtist(),
+                //requestDto.getArtist(),
                 requestDto.getTextReview(),
                 requestDto.getPhotoReviews(),
                 requestDto.getEvaluation(),

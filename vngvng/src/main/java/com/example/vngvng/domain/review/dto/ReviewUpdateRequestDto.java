@@ -17,7 +17,7 @@ import java.util.List;
 public class ReviewUpdateRequestDto {
     private Show show;
     private Venue venue;
-    private Artist artist;
+    //private Artist artist;
     private String textReview;
     private List<PhotoReview> photoReviews;
     private Evaluation evaluation;
@@ -26,9 +26,9 @@ public class ReviewUpdateRequestDto {
     private Long scrapCount;
 
     @Builder
-    public ReviewUpdateRequestDto(Show show, Venue venue, Artist artist, String textReview, List<PhotoReview> photoReviews, Evaluation evaluation, Seat seat, Long scrapCount) {
+    public ReviewUpdateRequestDto(Show show, Venue venue, String textReview, List<PhotoReview> photoReviews, Evaluation evaluation, Seat seat, Long scrapCount) {
         this.seat = seat;
-        this.artist = artist;
+        //this.artist = artist;
         this.show = show;
         this.venue = venue;
         this.evaluation = evaluation;
@@ -37,9 +37,9 @@ public class ReviewUpdateRequestDto {
         this.scrapCount = scrapCount;
     }
 
-    public void reviewUpdate(Show show, Venue venue, Artist artist, String textReview, List<PhotoReview> photoReviews, Evaluation evaluation, Seat seat){
+    public void reviewUpdate(Show show, Venue venue, String textReview, List<PhotoReview> photoReviews, Evaluation evaluation, Seat seat){
         this.seat = seat;
-        this.artist = artist;
+        //this.artist = artist;
         this.show = show;
         this.venue = venue;
         this.evaluation = evaluation;
